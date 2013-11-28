@@ -184,11 +184,14 @@ class MainForm(QtGui.QMainWindow):
         else:
             finish = len(code)
 
+        # write down 3 lines of code before current comment
         self.textEdit_before.insertPlainText(code[start:pos])
         
+        # change colous & write down current comment
         self.textEdit_before.setTextColor(QtGui.QColor('red'))
         self.textEdit_before.insertPlainText(comment_list[i])
         
+        # write down 3 lines of code after current comment
         self.textEdit_before.setTextColor(QtGui.QColor('black'))
         self.textEdit_before.insertPlainText(code[pos + len(comment_list[i]):finish])  
 
